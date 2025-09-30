@@ -1,5 +1,4 @@
-package com.example.demo.MODELS;
-
+package com.example.demo.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,8 +6,8 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "ITEM_SERVICO")
-public class ItemServicoModel {
+@Table(name = "ITEM_PECA")
+public class ItemPecaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -18,9 +17,12 @@ public class ItemServicoModel {
     private OrdemDeServicoModel ordemDeServico;
 
     @ManyToOne
-    @JoinColumn(name = "servico_id", nullable = false)
-    private ServicoModel servico;
+    @JoinColumn(name = "peca_id", nullable = false)
+    private PecaModel peca;
 
     @Column(nullable = false)
-    private BigDecimal precoCobrado;
+    private Integer quantidadeUtilizada;
+
+    @Column(nullable = false)
+    private BigDecimal precoUnitario;
 }
