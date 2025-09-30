@@ -26,6 +26,6 @@ public class OrdemDeServicoModel {
 
     @ManyToOne
     @JoinColumn(name = "mecanico_id", nullable = false)
-    private Usuario mecanico; // Assumindo que a entidade USUARIO se chama Usuario
+    private UsuarioModel mecanico; // Assumindo que a entidade USUARIO se chama Usuario
 
 }
