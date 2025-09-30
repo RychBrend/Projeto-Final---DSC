@@ -1,9 +1,7 @@
 package com.example.demo.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +10,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "CLIENTE") // Mapeia para a tabela CLIENTE
+@Getter
+@Setter
 public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Estratégia de auto-incremento
