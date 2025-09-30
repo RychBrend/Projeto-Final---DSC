@@ -31,7 +31,7 @@
 
 * Linguagem: Java
 * Framework: Spring Boot
-* Banco de dados: H2 Database
+* Banco de dados: Postgres
 * Utilitários: Lombok
 * Build: Maven
 * Documentação: Springdoc OpenAPI (Swagger)
