@@ -14,7 +14,7 @@ public class OrdemDeServicoModel {
     private Integer id;
 
     private LocalDateTime dataEntrada;
-    // ... outros campos ...
+
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
@@ -26,6 +26,6 @@ public class OrdemDeServicoModel {
 
     @ManyToOne
     @JoinColumn(name = "mecanico_id", nullable = false)
-    private UsuarioModel mecanico; // Assumindo que a entidade USUARIO se chama Usuario
+    private UsuarioModel mecanico;
 
 }
