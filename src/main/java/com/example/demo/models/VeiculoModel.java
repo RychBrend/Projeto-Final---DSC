@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,5 +19,6 @@ public class VeiculoModel {
 
     @ManyToOne // Muitos veículos pertencem a um cliente
     @JoinColumn(name = "cliente_id", nullable = false) // Chave estrangeira
+    @JsonBackReference // <-- ADICIONADO AQUI
     private ClienteModel cliente;
 }

@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,9 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CLIENTE") // Mapeia para a tabela CLIENTE
-@Getter
-@Setter
+@Table(name = "CLIENTE")
 public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Estratégia de auto-incremento
@@ -28,5 +27,6 @@ public class ClienteModel {
     private String endereco;
 
     @OneToMany(mappedBy = "cliente") // Um cliente pode ter muitos veículos
+    @JsonManagedReference // <-- ADICIONADO AQUI
     private List<VeiculoModel> veiculos;
 }
